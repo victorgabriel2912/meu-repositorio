@@ -1,0 +1,336 @@
+/* ══════════════════════════════════════════════════════════════════
+   PORTFÓLIO PESSOAL — estilo.css
+   Só o que o Bootstrap não consegue fazer sozinho.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ─── VARIÁVEIS DE COR (tema dark fogo) ───────────────────────── */
+:root {
+  --cor-primaria:   #f97316;
+  --cor-secundaria: #dc2626;
+
+  --fundo:           #0f0907;
+  --superficie:      #1a100c;
+  --superficie-alta: #261611;
+  --borda:           #42241a;
+
+  --texto:       #fff7ed;
+  --texto-suave: #d6b4a8;
+
+  /* Integração com variáveis do Bootstrap 5 */
+  --bs-primary: #f97316;
+  --bs-primary-rgb: 249, 115, 22;
+  --bs-secondary: #d6b4a8;
+  --bs-secondary-rgb: 214, 180, 168;
+}
+
+/* ─── BASE ──────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ─── AJUSTES DE CORES BOOTSTRAP COM A PALETA ───────────────────── */
+.text-primary { color: var(--cor-primaria) !important; }
+.text-secondary { color: var(--texto-suave) !important; }
+.bg-primary { background-color: var(--cor-primaria) !important; }
+.text-bg-primary {
+  background-color: rgba(249, 115, 22, 0.16) !important;
+  color: #fdba74 !important;
+  border: 1px solid rgba(249, 115, 22, 0.45);
+}
+
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: #0f0907;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #fb923c;
+  border-color: #fb923c;
+  color: #0f0907;
+}
+
+.btn-outline-primary {
+  color: #fdba74;
+  border-color: var(--cor-primaria);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: #0f0907;
+}
+
+/* ─── CLASSES DE FUNDO (substitui style="background-color:...") ─── */
+.bg-fundo      { background-color: var(--fundo) !important; }
+.bg-superficie { background-color: var(--superficie) !important; }
+
+/* ─── CARDS REUTILIZÁVEIS ───────────────────────────────────────── */
+.card-dark {
+  background-color: var(--superficie-alta);
+}
+
+.card-stat {
+  background-color: var(--fundo);
+  border-color: var(--borda) !important;
+}
+
+.card-skill {
+  background-color: var(--superficie-alta);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent !important;
+}
+
+.card-skill:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-primaria) !important;
+}
+
+.card-projeto {
+  background-color: var(--superficie-alta);
+  border: 1px solid var(--borda) !important;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-primaria) !important;
+}
+
+.card-footer-dark {
+  background-color: transparent;
+  border-color: var(--borda);
+}
+
+.badge-tech {
+  background-color: var(--fundo);
+  color: var(--texto-suave);
+  border: 1px solid var(--borda);
+  font-weight: 500;
+}
+
+/* ─── NAVBAR ────────────────────────────────────────────────────── */
+.navbar-portfolio {
+  background-color: rgba(15, 9, 7, 0.92) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+
+/* ─── HERO ──────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.foto-perfil {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  border: 4px solid var(--cor-primaria);
+}
+
+.hero-nome {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+@media (min-width: 992px) {
+  .foto-perfil { width: 340px; height: 340px; }
+  .hero        { padding-top: 88px; }
+}
+
+@media (max-width: 575px) {
+  .hero-nome { font-size: 2.5rem; }
+}
+
+/* ─── TÍTULO DE SEÇÃO (linha colorida embaixo) ──────────────────── */
+.titulo-secao {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin-bottom: 2rem;
+}
+
+.titulo-secao::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 48px; height: 4px;
+  background: linear-gradient(90deg, #facc15, var(--cor-primaria), var(--cor-secundaria));
+  border-radius: 99px;
+}
+
+/* ─── TOPO DO CARD DE PROJETO ───────────────────────────────────── */
+.card-topo {
+  height: 160px;
+  background: linear-gradient(135deg, #f59e0b, var(--cor-primaria), var(--cor-secundaria));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ─── CARROSSEL DE PROJETOS ─────────────────────────────────────── */
+.carousel-projetos {
+  padding-bottom: 3rem;
+}
+
+.card-topo-carousel {
+  min-height: 220px;
+  background: linear-gradient(135deg, #f59e0b, var(--cor-primaria), var(--cor-secundaria));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.carousel-projetos .carousel-indicators {
+  margin-bottom: 0;
+}
+
+.carousel-projetos .carousel-indicators [data-bs-target] {
+  width: 28px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: var(--borda);
+  opacity: 1;
+  transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+.carousel-projetos .carousel-indicators .active {
+  width: 42px;
+  background-color: var(--cor-primaria);
+}
+
+.carousel-projetos .carousel-control-prev,
+.carousel-projetos .carousel-control-next {
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(15, 9, 7, 0.85);
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.carousel-projetos .carousel-control-prev {
+  left: -22px;
+}
+
+.carousel-projetos .carousel-control-next {
+  right: -22px;
+}
+
+.carousel-projetos .carousel-control-prev:hover,
+.carousel-projetos .carousel-control-next:hover {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .carousel-projetos .carousel-control-prev { left: 8px; }
+  .carousel-projetos .carousel-control-next { right: 8px; }
+}
+
+/* ─── FORMULÁRIO DARK ───────────────────────────────────────────── */
+#form-contato .form-control {
+  background-color: var(--superficie);
+  border-color: var(--borda);
+  color: var(--texto);
+}
+
+#form-contato .form-control::placeholder {
+  color: var(--texto-suave);
+}
+
+#form-contato .form-control:focus {
+  background-color: var(--superficie-alta);
+  border-color: var(--cor-primaria);
+  color: var(--texto);
+  box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.25);
+}
+
+/* ─── CAMPO INVÁLIDO ────────────────────────────────────────────── */
+.campo-invalido { border-color: #f43f5e !important; }
+
+/* ─── TEMAS CLARO E ESCURO ──────────────────────────────────────── */
+html[data-tema="claro"] {
+  --fundo: #fff7ed;
+  --superficie: #ffedd5;
+  --superficie-alta: #ffffff;
+  --borda: #fdba74;
+  --texto: #431407;
+  --texto-suave: #7c2d12;
+  --bs-secondary: #7c2d12;
+}
+
+html[data-tema="claro"] body {
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+html[data-tema="claro"] .navbar-portfolio {
+  background-color: rgba(255, 247, 237, 0.94) !important;
+}
+
+html[data-tema="claro"] .text-white,
+html[data-tema="claro"] h1,
+html[data-tema="claro"] h2,
+html[data-tema="claro"] h3,
+html[data-tema="claro"] h4,
+html[data-tema="claro"] h5,
+html[data-tema="claro"] h6 {
+  color: var(--texto) !important;
+}
+
+html[data-tema="claro"] .text-secondary {
+  color: var(--texto-suave) !important;
+}
+
+html[data-tema="claro"] .card-dark,
+html[data-tema="claro"] .card-projeto,
+html[data-tema="claro"] .card-skill,
+html[data-tema="claro"] .card-stat {
+  box-shadow: 0 8px 24px rgba(67, 20, 7, 0.08);
+}
+
+html[data-tema="claro"] .badge-tech {
+  background-color: #fff7ed;
+}
+
+#botao-tema {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .navbar-portfolio,
+  .card-dark,
+  .card-projeto,
+  .card-skill,
+  .card-stat {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+}
