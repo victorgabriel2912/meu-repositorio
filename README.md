@@ -4,7 +4,7 @@ Site portfólio desenvolvido para a disciplina de **Desenvolvimento de Interface
 
 ## Link do Site (GitHub Pages)
 
-- **Portfólio publicado:** https://victorgabriel2912.github.io/github-pages/
+- **Portfólio publicado:** https://victorgabriel2912.github.io/meu-repositorio/
 
 ## O que foi implementado
 
